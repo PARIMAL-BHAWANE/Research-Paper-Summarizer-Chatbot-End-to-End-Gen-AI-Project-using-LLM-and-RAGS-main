@@ -45,7 +45,7 @@ if uploaded_file is not None:
             st.write("Answer:", answer)
 
         # Display chat history
-        st.write("Chat History:")
-        for q, a in st.session_state.chat_history:
-            st.write(f"**Q:** {q}")
-            st.write(f"**A:** {a}")
+       # st.write("Chat History:")
+        #for q, a in st.session_state.chat_history:
+         #   st.write(f"**Q:** {q}")
+          #  st.write(f"**A:** {a}")
