@@ -1,10 +1,10 @@
 from langchain_groq import ChatGroq
 from langchain.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.chains import ConversationalRetrievalChain
 from langchain.prompts import PromptTemplate
-from langchain.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS  # ✅ Correct import
 import os
 from dotenv import load_dotenv
 
@@ -15,8 +15,8 @@ class Chain:
     def __init__(self):
         self.llm = ChatGroq(
             temperature=0,
-            groq_api_key=os.getenv("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"),
-            model_name="llama-3.1-70b-versatile",
+            groq_api_key=os.getenv("GROQ_API_KEY"),
+            model_name="llama-3.3-70b-versatile",
         )
 
     def pdf_parser(self, file_path):
